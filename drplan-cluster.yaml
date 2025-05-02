@@ -2,21 +2,21 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: drplan-eks-seoul
-  region: ap-northeast-2
+  name: drplan-eks-singapore
+  region: ap-southeast-1
   version: "1.29"
 
 vpc:
-  id: vpc-086a3c72eb594497c
+  id: vpc-04ce64a01d4e09266
   subnets:
     private:
       ap-northeast-2a:
-        id: subnet-0759c4e4bbd40f2df
+        id: subnet-0eb3d0a10ccd1b4c5
       ap-northeast-2c:
-        id: subnet-0182cf08c70cabd80
+        id: subnet-0e250268ead65af75
 
 managedNodeGroups:
-  - name: drplan-ng
+  - name: drplan-ng-singapore
     instanceType: t3.medium
     desiredCapacity: 2
     minSize: 2
@@ -25,7 +25,7 @@ managedNodeGroups:
     privateNetworking: true
     ssh:
       allow: true
-      publicKeyName: dltjgus
+      publicKeyName: singapore
     iam:
       withAddonPolicies:
         albIngress: true
